@@ -4,44 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./dom/greet-dom.js"></script>
     <title>greetings</title>
     <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="angled-gradient">
+<body class="main-body">
     <!-- <div>Say hello in different language<//div> -->
-    <h2>Greetings Widget</h2>
+    <h2>Greetings Language Converter App (GLCA)</h2>
     <input type="text" name="" id="inputElements" placeholder="Enter your name">
     <h1 id="counter"></h1>
     <div class="label-radio-container">
-        <div class="label-radio">
-            <label>
-                <input type="radio" name="selector" value="english">
-                <span class="label-body">English</span>
+        <label>
+                <input type="radio" name="selector" value="english">English
             </label>
-        </div>
-        <div class="label-radio">
-            <label>
-                <input type="radio" name="selector" value="afrikaans">
-                <span class="label-body">Afrikaans</span>
+        <label>
+                <input type="radio" name="selector" value="sesotho">Sesotho
             </label>
-        </div>
-        <div class="label-radio">
-            <label>
-                <input type="radio" name="selector" value="french">
-                <span class="label-body">Zulu</span>
+        <label>
+                <input type="radio" name="selector" value="zulu">Zulu
             </label>
-        </div>
+    </div>
     </div>
 
     <button id="greetButton">greet</button>
-    <h1 id="msg"></h1>
+    <h1 id="txtBox"></h1>
 
     <button id="resetButton">reset</button>
-</body>
-<script src="js/greet.js"></script>
+
 
 </body>
+<script src="js/greet.js"></script>
 
 </html>
