@@ -32,6 +32,9 @@ window.addEventListener("DOMContentLoaded", function() {
         } else {
             message.innerHTML = "please select language."
         }
+        setTimeout(function(){
+            message.innerHTML = ""
+        }, 3500)
     });
 
     // this is the reset buttons event listener
