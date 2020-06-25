@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", function() {
         } else {
             message.innerHTML = "please select language."
         }
-        setTimeout(function(){
+        setTimeout(function() {
             message.innerHTML = ""
         }, 3500)
     });
@@ -41,6 +41,7 @@ window.addEventListener("DOMContentLoaded", function() {
     resetBtn.addEventListener("click", function() {
         GreetFactory.resetBtn();
         GreetFactory.resetBtn();
+        localStorage.clear("greetedUsers");
         location.reload();
     });
 });
