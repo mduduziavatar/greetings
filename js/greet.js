@@ -43,7 +43,6 @@ function greetFactory(stored) {
 
     function resetBtn() {
         userMappedData = {};
-        localStorage.clear("greetedUsers");
     }
 
 
