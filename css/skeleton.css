@@ -1,5 +1,14 @@
 .main-body {
-    background: cyan
+    height: 100%;
+    background: yellow;
+
+    padding: 1em;
+    margin: 1em;
+    font-family: 'Hachi Maru Pop', cursive;
+
+}
+.row{   
+     background: cyan;
 }
 
 html {
@@ -7,12 +16,20 @@ html {
     text-align: center;
 }
 
-#inputElement {
+.heading{
+    font-family: 'Fruktur', cursive;
+}
+
+#inputElements {
     text-align: left;
     border: none;
     height: 50px;
     width: 200px;
     border-radius: 1em;
+}
+.btn{
+    padding: 0.25em;
+    margin: 0.5em;
 }
 
 .label-radio-container {

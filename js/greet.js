@@ -1,4 +1,4 @@
-function greetFactory(stored) {
+function GreetFactory(stored) {
 
     var userMappedData = stored || {};
 
@@ -51,6 +51,7 @@ function greetFactory(stored) {
         getGreetCounter,
         getNameFromInput,
         getAllUsers,
-        resetBtn
+        resetBtn,
+        addedUser
     }
 }
