@@ -24,6 +24,8 @@
         <div class="row">
             <div class="col-12">
                 <h2 class="heading">Greetings Language Converter App (GLCA)</h2>
+                <p style="color:purple">Please enter your name below then select a language you would like to be greeted
+                    with!</p>
                 <input class="inputElements" type="text" name="" id="inputElements" placeholder=" Enter your name">
                 <!-- <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" required></textarea> -->
                 <h1 id="counter"></h1>
@@ -44,20 +46,21 @@
                         <label>
                             <input class="form-check-input" name="selector" type="radio" value="
                             您好
-                            Nín hǎo,  "
-                                value="manderin" aria-label="Radio button for following text input">Manderin
+                            Nín hǎo,  " value="manderin" aria-label="Radio button for following text input">Manderin
                         </label>
-                        <div id="log"></div>
+                        <div id="log" style="color: red;"></div>
                     </div>
                 </form>
-                <button type="button" id="greetButton" class="btn btn-primary">greet</button>
-
+                <button type="button" id="greet" class="btn btn-primary">greet </button>
+                <h2 class="txtBox" id="txtBox"></h2>
                 <!-- <button id="greetButton">greet</button> -->
-                <h1 class="txtBox"></h1>
 
-                <button type="button" id="resetButton" class="btn btn-danger">reset</button>
 
-                <!-- <button id="resetButton">reset</button> -->
+                <button type="button" id="reset" class="btn btn-danger">reset </button>
+                <h5 id="all"></h5> <!-- <button id="resetButton">reset</button> -->
+
+                <button type="button" id="allNames" class="btn btn-success">show greeted</button>
+
 
             </div>
         </div>
@@ -66,7 +69,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
-    <script src="js/greet.js"></script>
+<script src="js/greet.js"></script>
 
 <script src="./dom/greet-dom.js"></script>
 

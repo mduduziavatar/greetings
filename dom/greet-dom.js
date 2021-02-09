@@ -3,18 +3,36 @@ $(function () {
 
     var greetFactory = GreetFactory(stored);
 
-    $(".btn").on("click", function () {
+    $("#greet").on("click", function () {
         // alert("You clicked me!")
         let validate = $(".inputElements").val();
-        var name = greetFactory.getNameFromInput(validate)
-        let store = greetFactory.addedUser(name)
+        var name = greetFactory.getNameFromInput(validate);
+        greetFactory.clickCounter(name);
+        let store = greetFactory.addedUser(name);
         $(".form-check-input")
         let selected = $("input:checked").val()
-        if (store !== "") {
-            $(".txtBox").text(selected + name);
-             $("#counter").html(greetFactory.getGreetCounter())
+        if (selected !== undefined || name !== "") {
+            let message = $(".txtBox").text(selected + name);
+            $("#counter").html(greetFactory.getGreetCounter());
             localStorage['greetedUsers'] = JSON.stringify(greetFactory.getAllUsers());
-        }
-        // $(".textBox").text(name);
-    })
-})
+
+
+        } else if (selected == undefined || name !== "") {
+            $("#log").html("please enter a name and select a language.");
+        } 
+        setTimeout(function () {
+            $("#log").html("") = "";
+        }, 3500);
+
+    });
+    $("#reset").on("click", function () {
+        greetFactory.resetBtn();
+        localStorage.clear("greetedUsers");
+        location.reload();
+    });
+
+    $("#allNames").on("click", function () {
+        greetFactory.clickCounter();
+        $("#all").html(localStorage.greetedUsers.split());
+    });
+});

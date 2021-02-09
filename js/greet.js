@@ -45,6 +45,19 @@ function GreetFactory(stored) {
         userMappedData = {};
     }
 
+    function clickCounter() {
+        if (typeof(Storage) !== "undefined") {
+          if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+          } else {
+            localStorage.clickcount = 1;
+          }
+          document.getElementById("txtBox").innerHTML = localStorage.clickcount;
+        } else {
+          document.getElementById("txtBox").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+      }
+
 
     return {
         greetUser,
@@ -52,6 +65,7 @@ function GreetFactory(stored) {
         getNameFromInput,
         getAllUsers,
         resetBtn,
-        addedUser
+        addedUser,
+        clickCounter
     }
 }
