@@ -3,22 +3,38 @@ function GreetFactory(stored) {
     var userMappedData = stored || {};
 
     function greetUser(name, language) {
-        addedUser(name);
         switch (language) {
             case "english":
                 return "Hello, " + name;
             case "zulu":
                 return "Sawubona, " + name;
-            case "sesotho":
-                return "Dumela, " + name;
+            case "afrikaans":
+                return "Hallo, " + name;
+            case "mandarin":
+                return "您好 Nín hǎo, " + name;
             default:
                 return "Hello, " + name;
         }
     }
 
+    function errorMessages(name, language) {
+        if (!name && !language) {
+            return "Please enter a name and select a language";
+        }
+        else if (!name) {
+            return "Please enter a name";
+        }
+        else if (!language) {
+            return "Please select a language";
+        }
+        return "";
+    }
+
     function addedUser(userName) {
         if (userMappedData[userName] === undefined) {
-            userMappedData[userName] = 0;
+            userMappedData[userName] = 1;
+        } else {
+            userMappedData[userName] += 1;
         }
     }
 
@@ -29,8 +45,8 @@ function GreetFactory(stored) {
     function getNameFromInput(textBoxValue) {
         var regularExpression = /[^A-Za-z]/g;
         if (textBoxValue !== "") {
-            var lettersOnly = textBoxValue.replace(regularExpression, "")
-            var name = lettersOnly.charAt(0).toUpperCase() + lettersOnly.slice(1).toLowerCase()
+            var lettersOnly = textBoxValue.replace(regularExpression, "");
+            var name = lettersOnly.charAt(0).toUpperCase() + lettersOnly.slice(1).toLowerCase();
             return name;
         }
         return "";
@@ -45,20 +61,6 @@ function GreetFactory(stored) {
         userMappedData = {};
     }
 
-    function clickCounter() {
-        if (typeof(Storage) !== "undefined") {
-          if (localStorage.clickcount) {
-            localStorage.clickcount = Number(localStorage.clickcount)+1;
-          } else {
-            localStorage.clickcount = 1;
-          }
-          document.getElementById("txtBox").innerHTML = localStorage.clickcount;
-        } else {
-          document.getElementById("txtBox").innerHTML = "Sorry, your browser does not support web storage...";
-        }
-      }
-
-
     return {
         greetUser,
         getGreetCounter,
@@ -66,6 +68,6 @@ function GreetFactory(stored) {
         getAllUsers,
         resetBtn,
         addedUser,
-        clickCounter
+        errorMessages
     }
 }

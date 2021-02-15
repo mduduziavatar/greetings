@@ -1,12 +1,16 @@
+@import url(https://fonts.googleapis.com/css2?family=Fruktur&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap);
+@import url(https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css);
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css);
+
 .main-body {
     height: 100%;
     background: yellow;
-
     padding: 1em;
     margin: 1em;
     font-family: 'Hachi Maru Pop', cursive;
-
 }
+
 .row{   
      background: cyan;
 }
@@ -34,4 +38,8 @@ html {
 
 .label-radio-container {
     padding: 10px;
+}
+
+#log{
+    color: red;
 }

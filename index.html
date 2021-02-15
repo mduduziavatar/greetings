@@ -6,72 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>greetings</title>
     <link rel="stylesheet" href="css/skeleton.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fruktur&display=swap" rel="stylesheet">
-    <link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
 </head>
 
 <body class="main-body">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col">
                 <h2 class="heading">Greetings Language Converter App (GLCA)</h2>
-                <p style="color:purple">Please enter your name below then select a language you would like to be greeted
-                    with!</p>
+                <strong>
+                    <p id="log"></p>
+                </strong>
                 <input class="inputElements" type="text" name="" id="inputElements" placeholder=" Enter your name">
-                <!-- <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea" required></textarea> -->
                 <h1 id="counter"></h1>
                 <form>
                     <div class="label-radio-container">
                         <label>
-                            <input class="form-check-input" name="selector" type="radio" value="Hello,  " id="english"
+                            <input class="form-check-input" name="selector" type="radio" value="english"
                                 aria-label="Radio button for following text input">English
                         </label>
                         <label>
-                            <input class="form-check-input" name="selector" type="radio" value="Hallo,  " id="afrikaans"
+                            <input class="form-check-input" name="selector" type="radio" value="afrikaans"
                                 aria-label="Radio button for following text input">Afrikaans
                         </label>
                         <label>
-                            <input class="form-check-input" name="selector" type="radio" value="Sawubona,  " id="zulu"
+                            <input class="form-check-input" name="selector" type="radio" value="zulu"
                                 aria-label="Radio button for following text input">Zulu
                         </label>
                         <label>
-                            <input class="form-check-input" name="selector" type="radio" value="
-                            您好
-                            Nín hǎo,  " value="manderin" aria-label="Radio button for following text input">Manderin
+                            <input class="form-check-input" name="selector" type="radio" value="mandarin"
+                                aria-label="Radio button for following text input">Mandarin
                         </label>
-                        <div id="log" style="color: red;"></div>
                     </div>
                 </form>
-                <button type="button" id="greet" class="btn btn-primary">greet </button>
-                <h2 class="txtBox" id="txtBox"></h2>
-                <!-- <button id="greetButton">greet</button> -->
-
-
-                <button type="button" id="reset" class="btn btn-danger">reset </button>
-                <h5 id="all"></h5> <!-- <button id="resetButton">reset</button> -->
-
-                <button type="button" id="allNames" class="btn btn-success">show greeted</button>
-
-
+                <div class="row">
+                    <div class="col">
+                        <button type="button" id="greet" class="btn btn-primary">greet </button>
+                        <h2 class="txtBox" id="txtBox"></h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" id="reset" class="btn btn-danger">reset </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" id="allNames" class="btn btn-success">show greeted</button>
+                    </div>
+                </div>
+                <h5 id="all"></h5>
             </div>
         </div>
     </div>
-
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 <script src="js/greet.js"></script>
-
 <script src="./dom/greet-dom.js"></script>
-
-
 </html>

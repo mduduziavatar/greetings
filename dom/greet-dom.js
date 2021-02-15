@@ -4,27 +4,26 @@ $(function () {
     var greetFactory = GreetFactory(stored);
 
     $("#greet").on("click", function () {
-        // alert("You clicked me!")
+        $("#all").hide();
+        $(".txtBox").show();
         let validate = $(".inputElements").val();
         var name = greetFactory.getNameFromInput(validate);
-        greetFactory.clickCounter(name);
-        let store = greetFactory.addedUser(name);
-        $(".form-check-input")
-        let selected = $("input:checked").val()
-        if (selected !== undefined || name !== "") {
-            let message = $(".txtBox").text(selected + name);
+        greetFactory.addedUser(name);
+        $(".form-check-input");
+        let language = $("input:checked").val();
+        let errors = greetFactory.errorMessages(name, language);
+        $("#log").text(errors);
+        if (!errors) {
+            let message = greetFactory.greetUser(name, language);
+            $(".txtBox").text(message);
             $("#counter").html(greetFactory.getGreetCounter());
             localStorage['greetedUsers'] = JSON.stringify(greetFactory.getAllUsers());
-
-
-        } else if (selected == undefined || name !== "") {
-            $("#log").html("please enter a name and select a language.");
-        } 
+        }
         setTimeout(function () {
             $("#log").html("") = "";
         }, 3500);
-
     });
+
     $("#reset").on("click", function () {
         greetFactory.resetBtn();
         localStorage.clear("greetedUsers");
@@ -32,7 +31,16 @@ $(function () {
     });
 
     $("#allNames").on("click", function () {
-        greetFactory.clickCounter();
-        $("#all").html(localStorage.greetedUsers.split());
+        $(".txtBox").hide();
+        $("#all").show();
+        $("#all").html("");
+        let names = greetFactory.getAllUsers();
+        for (let name in names) {
+            let perPerson = name
+            let perCount = names[perPerson]
+            if (perPerson !== "") {
+                $("#all").append("<div>" + perPerson + " has been greeted " + perCount + "x" + "</div>");
+            }
+        }
     });
 });
